@@ -53,9 +53,9 @@
 
 ### ⚡ Key Professional Milestones
 
-*   **Production Incident Response:** Maintained high availability for live containerized fintech apps at Shri Balaji Infotech, slashing Mean Time to Resolution (MTTR)[cite: 1].
-*   **Zero Configuration Drift:** Engineered production-grade PostgreSQL infrastructure with Terraform S3 Remote Backends and hardened VPC security topologies[cite: 1].
-*   **Configuration Management:** Developed reusable, reproducible server configurations utilizing Ansible for automated node exporter setups and database provisioning[cite: 1].
+*   **Production Incident Response:** Maintained high availability for live containerized fintech apps at Shri Balaji Infotech, slashing Mean Time to Resolution (MTTR).
+*   **Zero Configuration Drift:** Engineered production-grade PostgreSQL infrastructure with Terraform S3 Remote Backends and hardened VPC security topologies.
+*   **Configuration Management:** Developed reusable, reproducible server configurations utilizing Ansible for automated node exporter setups and database provisioning.
 
 ---
 
