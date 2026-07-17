@@ -37,16 +37,20 @@
 
 ---
 
-# 📊 GitHub Stats
+## 📊 Enterprise Engineering Metrics & Core Impact
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=2004Asbah&theme=aura&hide_border=false&include_all_commits=false&count_private=false" alt="Asbah's GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=2004Asbah&theme=aura&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Asbah's Top Languages" width="48%" />
-</p>
+| 🚀 Production Impact | 🛠️ Infrastructure as Code | 🛰️ R&D & Systems Logic |
+| :--- | :--- | :--- |
+| **Microservices Monitored:** 15+ microservice anomalies resolved on Red Hat OpenShift | **Deployment Automation:** IaC execution workflows brought down from hours to `< 5 mins` | **Patent Granted:** Multi-UAV Semi-Autonomous Operating Platform |
+| **Fintech Scale:** Arttha Digital Wallet Application live environment stability tracking | **Container Optimization:** Multi-stage Docker builds achieving a `77%` image size reduction | **Core Architecture:** Real-time collision avoidance & aerial threat prevention logic |
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=2004Asbah&theme=aura&hide_border=false" alt="Asbah's GitHub Streak" width="97%" />
-</p>
+---
+
+### ⚡ Key Professional Milestones
+
+*   **Production Incident Response:** Maintained high availability for live containerized fintech apps at Shri Balaji Infotech, slashing Mean Time to Resolution (MTTR).
+*   **Zero Configuration Drift:** Engineered production-grade PostgreSQL infrastructure with Terraform S3 Remote Backends and hardened VPC security topologies.
+*   **Configuration Management:** Developed reusable, reproducible server configurations utilizing Ansible for automated node exporter setups and database provisioning.
 
 ---
 
