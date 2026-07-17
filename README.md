@@ -41,11 +41,11 @@
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=2004Asbah&theme=aura&hide_border=false&include_all_commits=false&count_private=false" alt="Asbah's GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=2004Asbah&theme=aura&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Asbah's Top Languages" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=2004Asbah&theme=aura&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Asbah's Top Languages" width="48%" />
 </p>
 
 <p align="center">
-  <img src="https://nirzak-streak-stats.vercel.app/?user=2004Asbah&theme=aura&hide_border=false" alt="Asbah's GitHub Streak" width="97%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=2004Asbah&theme=aura&hide_border=false" alt="Asbah's GitHub Streak" width="97%" />
 </p>
 
 ---
