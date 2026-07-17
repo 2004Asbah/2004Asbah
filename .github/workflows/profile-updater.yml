@@ -2,8 +2,8 @@ name: Update Profile Automation Matrix
 
 on:
   schedule:
-    - cron: '0 */12 * * *' 
-  workflow_dispatch: 
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,24 +15,32 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Generate Dynamic Metrics Matrix
+      - name: Run Matrix Updater Execution Engine
         run: |
-          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
-          
-          cat << 'EOF' > new_matrix.md
+          python3 -c '
+          import datetime
+
+          current_time = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+          matrix_content = f"""<!-- START_AUTOMATION_MATRIX -->
           | Component / Environment | Status | Last Verified | Core Engineering Metric |
           | :--- | :--- | :--- | :--- |
-          | **`🚀 Production Monitored`** | ![Monitoring](https://img.shields.io/badge/OpenShift-Active-brightgreen?style=flat-square) | _`$TIMESTAMP`_ | 15+ Microservice Anomalies Resolved |
-          | **`🏗️ IaC Automation`** | ![Terraform](https://img.shields.io/badge/Terraform-Drift_0%25-blue?style=flat-square) | _`$TIMESTAMP`_ | Deployment runtime optimized to `< 5m` |
-          | **`🐳 Artifact Registry`**| ![Docker](https://img.shields.io/badge/Docker-77%25_Optimized-blueviolet?style=flat-square) | _`$TIMESTAMP`_ | Multi-stage image reduction achieved |
-          | **`🔒 System Hardening`** | ![RHEL9](https://img.shields.io/badge/RHEL_9-Hardened-success?style=flat-square) | _`$TIMESTAMP`_ | Reproducible Ansible Base Target |
-          EOF
+          | **`🚀 Production Monitored`** | ![Monitoring](https://img.shields.io/badge/OpenShift-Active-brightgreen?style=flat-square) | _`{current_time}`_ | 15+ Microservice Anomalies Resolved |
+          | **`🏗️ IaC Automation`** | ![Terraform](https://img.shields.io/badge/Terraform-Drift_0%25-blue?style=flat-square) | _`{current_time}`_ | Deployment runtime optimized to `< 5m` |
+          | **`🐳 Artifact Registry`**| ![Docker](https://img.shields.io/badge/Docker-77%25_Optimized-blueviolet?style=flat-square) | _`{current_time}`_ | Multi-stage image reduction achieved |
+          | **`🔒 System Hardening`** | ![RHEL9](https://img.shields.io/badge/RHEL_9-Hardened-success?style=flat-square) | _`{current_time}`_ | Reproducible Ansible Base Target |
+          <!-- END_AUTOMATION_MATRIX -->"""
 
-          sed -i "s/{{TIMESTAMP}}/$TIMESTAMP/g" new_matrix.md
+          with open("README.md", "r") as f:
+              readme = f.read()
 
-          sed -i -e '/<!-- START_AUTOMATION_MATRIX -->/,/<!-- END_AUTOMATION_MATRIX -->/{ /<!-- START_AUTOMATION_MATRIX -->/!{ /<!-- END_AUTOMATION_MATRIX -->/!d; }; }' README.md
-          sed -i '/<!-- START_AUTOMATION_MATRIX -->/r new_matrix.md' README.md
-          rm new_matrix.md
+          import re
+          pattern = r"<!-- START_AUTOMATION_MATRIX -->.*?<!-- END_AUTOMATION_MATRIX -->"
+          updated_readme = re.sub(pattern, matrix_content, readme, flags=re.DOTALL)
+
+          with open("README.md", "w") as f:
+              f.write(updated_readme)
+          '
 
       - name: Commit and Push Infrastructure Status Update
         run: |
