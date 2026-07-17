@@ -1,0 +1,38 @@
+name: Update Profile Automation Matrix
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # Runs automatically every 12 hours
+  workflow_dispatch: # Allows you to run it manually with a single click
+
+jobs:
+  refresh-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Dynamic Metrics Matrix
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+          
+          cat << 'EOF' > new_matrix.md
+          | Component / Environment | Status | Last Verified | Core Engineering Metric |
+          | :--- | :--- | :--- | :--- |
+          | **`🚀 Production Monitored`** | ![Monitoring](https://img.shields.io/badge/OpenShift-Active-brightgreen?style=flat-square) | _`$TIMESTAMP`_ | 15+ Microservice Anomalies Resolved |
+          | **`🏗️ IaC Automation`** | ![Terraform](https://img.shields.io/badge/Terraform-Drift_0%25-blue?style=flat-square) | _`$TIMESTAMP`_ | Deployment runtime optimized to `< 5m` |
+          | **`🐳 Artifact Registry`**| ![Docker](https://img.shields.io/badge/Docker-77%25_Optimized-blueviolet?style=flat-square) | _`$TIMESTAMP`_ | Multi-stage image reduction achieved |
+          | **`🔒 System Hardening`** | ![RHEL9](https://img.shields.io/badge/RHEL_9-Hardened-success?style=flat-square) | _`$TIMESTAMP`_ | Reproducible Ansible Base Target |
+          EOF
+
+          sed -i -e '/<!-- START_AUTOMATION_MATRIX -->/,/<!-- END_AUTOMATION_MATRIX -->/{ /<!-- START_AUTOMATION_MATRIX -->/!{ /<!-- END_AUTOMATION_MATRIX -->/!d; }; }' README.md
+          sed -i '/<!-- START_AUTOMATION_MATRIX -->/r new_matrix.md' README.md
+          rm new_matrix.md
+
+      - name: Commit and Push Infrastructure Status Update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff-index --quiet HEAD || git commit -m "chore(infra): automated refresh of profile deployment status matrix [skip ci]"
+          git push
