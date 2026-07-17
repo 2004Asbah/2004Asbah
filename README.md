@@ -37,20 +37,25 @@
 
 ---
 
-## 📊 Enterprise Engineering Metrics & Core Impact
+## 🛠️ Automated Infrastructure & Deployment Status Matrix
+<!-- START_AUTOMATION_MATRIX -->
+| Component / Environment | Status | Last Verified | Core Engineering Metric |
+| :--- | :--- | :--- | :--- |
+| **`🚀 Production Monitored`** | ![Monitoring](https://img.shields.io/badge/OpenShift-Active-brightgreen?style=flat-square) | *Syncing...* | 15+ Microservice Anomalies Resolved |
+| **`🏗️ IaC Automation`** | ![Terraform](https://img.shields.io/badge/Terraform-Drift_0%25-blue?style=flat-square) | *Syncing...* | Deployment runtime optimized to `< 5m` |
+| **`🐳 Artifact Registry`**| ![Docker](https://img.shields.io/badge/Docker-77%25_Optimized-blueviolet?style=flat-square) | *Syncing...* | Multi-stage image reduction achieved |
+| **`🔒 System Hardening`** | ![RHEL9](https://img.shields.io/badge/RHEL_9-Hardened-success?style=flat-square) | *Syncing...* | Reproducible Ansible Base Target |
+<!-- END_AUTOMATION_MATRIX -->
 
-| 🚀 Production Impact | 🛠️ Infrastructure as Code | 🛰️ R&D & Systems Logic |
-| :--- | :--- | :--- |
-| **Microservices Monitored:** 15+ microservice anomalies resolved on Red Hat OpenShift | **Deployment Automation:** IaC execution workflows brought down from hours to `< 5 mins` | **Patent Granted:** Multi-UAV Semi-Autonomous Operating Platform |
-| **Fintech Scale:** Arttha Digital Wallet Application live environment stability tracking | **Container Optimization:** Multi-stage Docker builds achieving a `77%` image size reduction | **Core Architecture:** Real-time collision avoidance & aerial threat prevention logic |
+> 💡 *Note: The timestamp matrix above is dynamically updated using a custom upstream GitHub Actions pipeline to reflect real-time configuration health.*
 
 ---
 
 ### ⚡ Key Professional Milestones
 
-*   **Production Incident Response:** Maintained high availability for live containerized fintech apps at Shri Balaji Infotech, slashing Mean Time to Resolution (MTTR).
-*   **Zero Configuration Drift:** Engineered production-grade PostgreSQL infrastructure with Terraform S3 Remote Backends and hardened VPC security topologies.
-*   **Configuration Management:** Developed reusable, reproducible server configurations utilizing Ansible for automated node exporter setups and database provisioning.
+*   **Production Incident Response:** Maintained high availability for live containerized fintech apps at Shri Balaji Infotech, slashing Mean Time to Resolution (MTTR)[cite: 1].
+*   **Zero Configuration Drift:** Engineered production-grade PostgreSQL infrastructure with Terraform S3 Remote Backends and hardened VPC security topologies[cite: 1].
+*   **Configuration Management:** Developed reusable, reproducible server configurations utilizing Ansible for automated node exporter setups and database provisioning[cite: 1].
 
 ---
 
