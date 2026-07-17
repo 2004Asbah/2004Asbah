@@ -19,7 +19,7 @@ jobs:
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
           
-          cat << 'EOF' > new_matrix.md
+          cat << EOF > new_matrix.md
           | Component / Environment | Status | Last Verified | Core Engineering Metric |
           | :--- | :--- | :--- | :--- |
           | **`🚀 Production Monitored`** | ![Monitoring](https://img.shields.io/badge/OpenShift-Active-brightgreen?style=flat-square) | _`$TIMESTAMP`_ | 15+ Microservice Anomalies Resolved |
