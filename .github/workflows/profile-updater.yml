@@ -2,8 +2,11 @@ name: Update Profile Automation Matrix
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # Runs automatically every 12 hours
-  workflow_dispatch: # Allows you to run it manually with a single click
+    - cron: '0 */12 * * *' 
+  workflow_dispatch: 
+
+permissions:
+  contents: write
 
 jobs:
   refresh-matrix:
